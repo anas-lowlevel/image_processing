@@ -38,4 +38,11 @@ def median_stacking(k: int, input_image: Image.Image):
             result_pixels[x,y] = (median_r, median_g,median_b)
 
 
-    result_image.save(f"output_k_{k}_python.jpg")
+    result_image.save("medianstacked.png")
+
+
+if __name__ == "__main__":
+    k = 3
+
+    with Image.open("input.png") as input_image:
+        median_stacking(k, input_image)
